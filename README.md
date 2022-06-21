@@ -1,11 +1,3 @@
-Office IT Pro Deployment Scripts
-
-## NOTICE
-
-Please use [https://config.office.com](https://config.office.com).
-
-Development of [https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts) has stopped.
-
 ## Overview
 
 This repo is a collection of useful PowerShell scripts to make deploying Office 2016 and Office 365 ProPlus easier for IT Pros and administrators. 
