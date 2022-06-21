@@ -3,14 +3,14 @@
 This repo is a collection of useful PowerShell scripts to make deploying Office 2016 and Office 365 ProPlus easier for IT Pros and administrators. 
 
 ## Upgrade to Office 365 ProPlus
-Click [here](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/blob/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun/Upgrade_Office2007_README.md) to upgrade from Office 2007  
-Click [here](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/blob/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun/Upgrade_Office2010_README.md) to upgrade from Office 2010  
-Click [here](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/blob/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun/Upgrade_Office2013_README.md) to upgrade from Office 2013 
+Click [here](https://github.com/jcarvalheiro/OfficeXMLEditor/blob/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun/Upgrade_Office2007_README.md) to upgrade from Office 2007  
+Click [here](https://github.com/jcarvalheiro/OfficeXMLEditor/blob/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun/Upgrade_Office2010_README.md) to upgrade from Office 2010  
+Click [here](https://github.com/jcarvalheiro/OfficeXMLEditor/blob/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun/Upgrade_Office2013_README.md) to upgrade from Office 2013 
 
 ## Do you have System Center Configuration Manager?
-You can automate the configuration of ConfigMgr to deploy and manage your Office ProPlus environment using [Deploying Office ProPlus with Configuration Manager](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/tree/master/Office-ProPlus-Deployment/Setup-CMOfficeDeployment)
+You can automate the configuration of ConfigMgr to deploy and manage your Office ProPlus environment using [Deploying Office ProPlus with Configuration Manager](https://github.com/jcarvalheiro/OfficeXMLEditor/tree/master/Office-ProPlus-Deployment/Setup-CMOfficeDeployment)
 
-We also provide Office ProPlus specific reports. [Office ProPlus ConfigMgr Reports](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/tree/master/Office-ProPlus-Management/Setup-CMOffice365ClientReports)
+We also provide Office ProPlus specific reports. [Office ProPlus ConfigMgr Reports](https://github.com/jcarvalheiro/OfficeXMLEditor/tree/master/Office-ProPlus-Management/Setup-CMOffice365ClientReports)
 
 ## Are you manually editing your configuration XML files?
 Tired of manually editing the Office ProPlus Configuration XML File?
@@ -19,11 +19,11 @@ Try our online XML Editor [Office Click-To-Run Configuration XML Editor](https:/
 
 ## Would you like a faster and easier way to download your Office ProPlus files
 
-Try using [Download-OfficeProPlusChannels](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/tree/master/Office-ProPlus-Deployment/Download-OfficeProPlusBranch) to quickly and easily download from multiple Channels and languages with one operation.
+Try using [Download-OfficeProPlusChannels](https://github.com/jcarvalheiro/OfficeXMLEditor/tree/master/Office-ProPlus-Deployment/Download-OfficeProPlusBranch) to quickly and easily download from multiple Channels and languages with one operation.
 
 ## Do you use Group Policy to configure your Office Clients?
 
-If you have Group Policy setting from previous versions of Office use our [Copy-OfficeGPOSettings](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/tree/master/Office-ProPlus-Preparation/Copy-OfficeGPOSettings) to migrate your settings to Office 2016.
+If you have Group Policy setting from previous versions of Office use our [Copy-OfficeGPOSettings](https://github.com/jcarvalheiro/OfficeXMLEditor/tree/master/Office-ProPlus-Preparation/Copy-OfficeGPOSettings) to migrate your settings to Office 2016.
 
 ## Would you like to see example of how to use our scripts to create deployment solutions?
 
