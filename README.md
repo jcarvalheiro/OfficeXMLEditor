@@ -25,7 +25,7 @@ We also provide Office ProPlus specific reports. [Office ProPlus ConfigMgr Repor
 ## Are you manually editing your configuration XML files?
 Tired of manually editing the Office ProPlus Configuration XML File?
 
-Try our online XML Editor [Office Click-To-Run Configuration XML Editor](http://officedev.github.io/Office-IT-Pro-Deployment-Scripts/XmlEditor.html)
+Try our online XML Editor [Office Click-To-Run Configuration XML Editor](https://jcarvalheiro.github.io/OfficeXMLEditor/XmlEditor.html)
 
 ## Would you like a faster and easier way to download your Office ProPlus files
 
@@ -38,9 +38,6 @@ If you have Group Policy setting from previous versions of Office use our [Copy-
 ## Would you like to see example of how to use our scripts to create deployment solutions?
 
 [Deployment Examples](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/tree/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun)
-
-## Scripts
-For more detailed documentation of each script, check the [Wiki](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/wiki) or the readme file in the corresponding folder
 
 ## New to PowerShell and Office 365?
 Check out [PowerShell for Office 365](http://powershell.office.com) for advice on getting started, key scenarios and script samples.  
