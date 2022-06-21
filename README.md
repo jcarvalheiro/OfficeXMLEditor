@@ -27,7 +27,7 @@ If you have Group Policy setting from previous versions of Office use our [Copy-
 
 ## Would you like to see example of how to use our scripts to create deployment solutions?
 
-[Deployment Examples](https://github.com/OfficeDev/Office-IT-Pro-Deployment-Scripts/tree/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun)
+[Deployment Examples](https://github.com/jcarvalheiro/OfficeXMLEditor/tree/master/Office-ProPlus-Deployment/Deploy-OfficeClickToRun)
 
 ## New to PowerShell and Office 365?
 Check out [PowerShell for Office 365](http://powershell.office.com) for advice on getting started, key scenarios and script samples.  
