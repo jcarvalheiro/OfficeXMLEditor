@@ -1063,54 +1063,18 @@ function setVersionPanel(buttonId) {
     $(".navrowversion").removeClass('is-selected');
     $("#" + buttonId).addClass('is-selected');
 
-    if (buttonId.toLowerCase() == "office2013select") {
-        changeVersions("2013");
-    }
     if (buttonId.toLowerCase() == "office2016select") {
         changeVersions("2016");
+    }
+    if (buttonId.toLowerCase() == "office2019select") {
+        changeVersions("2019");
+    }
+    if (buttonId.toLowerCase() == "office2021select") {
+        changeVersions("2021");
     }
 }
 
 function changeVersions(version) {
-    if (version == "2013") {
-        $("#branchSection").hide("slow");
-        $("#newVersionSection").hide("slow");
-        $("#updateBranchSection").hide("slow");
-        $("#mgtToggleGroup").hide("slow");
-        $('#mgtToggle').prop("checked", false);
-        $("#pinIconsProperty").hide("slow");
-
-        $("#autoUpgradeToggle").show("slow");
-        $("#txtLegacyVersion").attr("placeholder", versions[0]);
-        $("#txtTargetVersion").attr("placeholder", versions[0]);
-        console.trace('2013 branch', versions[0]);
-        $("#txtLegacyVersion").val(versions[0]);
-        $("#txtTargetVersion").val(versions[0]);
-        //note values must be set before typeahead is called to kill the cache otherwise, you'll have issues
-        $('#versionTextBox .typeahead').typeahead('destroy', 'NoCached');
-        $('#updateVersionTextBox .typeahead').typeahead('destroy', 'NoCached');
-        $('#legacyVersionTextBox .typeahead').typeahead('destroy', 'NoCached');
-
-        $('#legacyVersionTextBox .typeahead').typeahead({
-            hint: false,
-            highlight: true,
-            minLength: 1
-        },
-        {
-            name: 'versions',
-            source: substringMatcher(versions)
-        });
-
-        $('#updateVersionTextBox .typeahead').typeahead({
-            hint: false,
-            highlight: true,
-            minLength: 1
-        },
-        {
-            name: 'versions',
-            source: substringMatcher(versions)
-        });
-    }
     if (version == "2016") {
         $("#branchSection").show("slow");
         $("#newVersionSection").show("slow");
@@ -1194,6 +1158,176 @@ function changeVersions(version) {
 
     changeProducts(version);
     changeExcludeApps(version);
+}
+
+if (version == "2019") {
+    $("#branchSection").show("slow");
+    $("#newVersionSection").show("slow");
+    $("#updateBranchSection").show("slow");
+    $("#mgtToggleGroup").show("slow");
+    $("#autoUpgradeToggle").hide("slow");
+    $("#pinIconsProperty").show("slow");
+    $("#txtTargetVersion").val('');
+
+    $("#txtPidKey").val("");
+
+    $('#versionTextBox .typeahead').typeahead('destroy', 'NoCached');
+    $('#updateVersionTextBox .typeahead').typeahead('destroy', 'NoCached');
+    $('#legacyVersionTextBox .typeahead').typeahead('destroy', 'NoCached');
+
+    var selectVersions = [];
+    selectVersions.push('');
+    var versionss = [];
+    var selectedBranch = $("#cbBranch").val();
+
+    if (versionData) {
+        for (var i = 0; i < versionData.length; i++) {
+            var flagMatch = false;
+
+            var branchName = versionData[i].Name;
+
+            if (branchName == "InsidersSlow") {
+                branchName = "FirstReleaseCurrent";
+            }
+
+            if (branchName == selectedBranch.replace(" ", "")) {
+                flagMatch = true;
+            }
+
+            if (flagMatch) {
+                versionss.push('Latest');
+                for (var v = 0; v < versionData[i].Updates.length; v++) {
+                    var update = versionData[i].Updates[v];
+                    selectVersions.push(update.LegacyVersion);
+                    if ($.inArray(update.Version, versionss) === -1) {
+                        versionss.push(update.Version);
+                    }
+                }
+                var txtVersion = $('#txtVersion');
+                txtVersion.msdropdownvals(versionss, versionss);
+                txtVersion.change();
+            }
+        }
+    }
+    $("#txtVersion").attr("placeholder", selectVersions[0]);
+    $("#txtTargetVersion").attr("placeholder", selectVersions[0]);
+    $("#txtLegacyVersion").attr("placeholder", selectVersions[0]);
+    $("#txtTargetVersion").val(selectVersions[0]);
+    console.trace('2019 version', selectVersions);
+    $("#txtLegacyVersion").val(selectVersions[0]);
+    //note values must be set before typeahead is called to kill the cache otherwise, you'll have issues
+    $('#legacyVersionTextBox .typeahead').typeahead({
+        hint: false,
+        highlight: true,
+        minLength: 1
+    },
+    {
+        name: 'versions',
+        source: substringMatcher(selectVersions)
+    });
+
+    $('#updateVersionTextBox .typeahead').typeahead({
+        hint: false,
+        highlight: true,
+        minLength: 1
+    },
+    {
+        name: 'versions',
+        source: substringMatcher(selectVersions)
+    });
+
+
+}
+
+odtToggleUpdate();
+
+changeProducts(version);
+changeExcludeApps(version);
+}
+
+if (version == "2021") {
+    $("#branchSection").show("slow");
+    $("#newVersionSection").show("slow");
+    $("#updateBranchSection").show("slow");
+    $("#mgtToggleGroup").show("slow");
+    $("#autoUpgradeToggle").hide("slow");
+    $("#pinIconsProperty").show("slow");
+    $("#txtTargetVersion").val('');
+
+    $("#txtPidKey").val("");
+
+    $('#versionTextBox .typeahead').typeahead('destroy', 'NoCached');
+    $('#updateVersionTextBox .typeahead').typeahead('destroy', 'NoCached');
+    $('#legacyVersionTextBox .typeahead').typeahead('destroy', 'NoCached');
+
+    var selectVersions = [];
+    selectVersions.push('');
+    var versionss = [];
+    var selectedBranch = $("#cbBranch").val();
+
+    if (versionData) {
+        for (var i = 0; i < versionData.length; i++) {
+            var flagMatch = false;
+
+            var branchName = versionData[i].Name;
+
+            if (branchName == "InsidersSlow") {
+                branchName = "FirstReleaseCurrent";
+            }
+
+            if (branchName == selectedBranch.replace(" ", "")) {
+                flagMatch = true;
+            }
+
+            if (flagMatch) {
+                versionss.push('Latest');
+                for (var v = 0; v < versionData[i].Updates.length; v++) {
+                    var update = versionData[i].Updates[v];
+                    selectVersions.push(update.LegacyVersion);
+                    if ($.inArray(update.Version, versionss) === -1) {
+                        versionss.push(update.Version);
+                    }
+                }
+                var txtVersion = $('#txtVersion');
+                txtVersion.msdropdownvals(versionss, versionss);
+                txtVersion.change();
+            }
+        }
+    }
+    $("#txtVersion").attr("placeholder", selectVersions[0]);
+    $("#txtTargetVersion").attr("placeholder", selectVersions[0]);
+    $("#txtLegacyVersion").attr("placeholder", selectVersions[0]);
+    $("#txtTargetVersion").val(selectVersions[0]);
+    console.trace('2021 version', selectVersions);
+    $("#txtLegacyVersion").val(selectVersions[0]);
+    //note values must be set before typeahead is called to kill the cache otherwise, you'll have issues
+    $('#legacyVersionTextBox .typeahead').typeahead({
+        hint: false,
+        highlight: true,
+        minLength: 1
+    },
+    {
+        name: 'versions',
+        source: substringMatcher(selectVersions)
+    });
+
+    $('#updateVersionTextBox .typeahead').typeahead({
+        hint: false,
+        highlight: true,
+        minLength: 1
+    },
+    {
+        name: 'versions',
+        source: substringMatcher(selectVersions)
+    });
+
+
+}
+
+odtToggleUpdate();
+
+changeProducts(version);
+changeExcludeApps(version);
 }
 
 function downloadOdt() {
