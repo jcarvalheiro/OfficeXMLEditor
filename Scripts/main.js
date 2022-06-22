@@ -2,7 +2,7 @@
 var selectDate;
 
 $(document).ready(function () {
-    
+
     $('#txtDeadline').datetimepicker({
         sideBySide: true
     }).on("dp.change", function (e) {
@@ -71,7 +71,7 @@ $(document).ready(function () {
         e.preventDefault();
         var $that = $(this);
         var url = document.getElementById(this.id).getAttribute("href");
-        
+
         var rawFile = new XMLHttpRequest();
         rawFile.open("GET", url, true);
         rawFile.onreadystatechange = function () {
@@ -111,13 +111,13 @@ $(document).ready(function () {
 
         var start = document.getElementById("txtPidKey").selectionStart;
         var end = document.getElementById("txtPidKey").selectionEnd;
-        
+
         if (code == 189) {
             if (start != 5 && start != 11 && start != 17 && start != 23) {
                 e.preventDefault();
             }
         }
-        
+
         if (code == 8 || code == 46) {
             if (end < currentText.length) {
                 var selPart = currentText.substring(start - 1, end);
@@ -129,7 +129,7 @@ $(document).ready(function () {
 
         if (code == 8 || (code >= 37 && code <= 40)) return;
         if (code == 46 || code == 16) return;
-        
+
         var strSplit = currentText.split('-');
         for (var t = 0; t < strSplit.length; t++) {
             var part = strSplit[t];
@@ -349,11 +349,11 @@ $(document).ready(function () {
             var target = $(e.target).attr("href");
             var liItems = mainTabs.getElementsByTagName("li");
             if (liItems) {
-                
+
                 for (var i = 0; i < liItems.length; i++) {
                     var liItem = liItems[i];
                     if ($("#" + liItem.id).hasClass("active")) {
-                        
+
                     }
                 }
             }
@@ -497,7 +497,7 @@ $(document).ready(function () {
     $(window).scroll(function() {
         scrollXmlEditor();
     });
-    
+
     $('#the-basics .typeahead').typeahead({
         hint: true,
         highlight: true,
@@ -750,9 +750,9 @@ function validatePidKey(t) {
             } else {
                 thirdPart = firstPart2;
             }
-            
+
             var startPos = document.getElementById("txtPidKey").selectionStart;
-            
+
             t.value = firstPart + "-" + secondPart + "-" + thirdPart;
             t.value = t.value.replace("--", "-");
 
@@ -812,7 +812,7 @@ function validatePidKey(t) {
     }
 
 
-   
+
 
 }
 
@@ -947,7 +947,7 @@ function changeSelectedLanguage() {
     var selectLanguage = $("#cbLanguage").val();
 
     var xmlDoc = getXmlDocument();
-            
+
     $("#btAddLanguage").prop("disabled", false);
 
     var addNode = null;
@@ -1325,7 +1325,7 @@ function odtAddRemoveApp(xmlDoc) {
 
     var $removeAll = $("#removeAllProducts");
     if ($removeAll.hasClass('btn-primary')) {
- 
+
     }
 
     var removeNode = xmlDoc.createElement("Remove");
@@ -1609,15 +1609,15 @@ function odtSaveDisplay(xmlDoc) {
     if ($displayLevelNone.hasClass('btn-primary')) {
         addNode.setAttribute("Level", "None");
     }
-    
+
     if ($displayLevelFull.hasClass('btn-primary')) {
         addNode.setAttribute("Level", "Full");
     }
-    
+
     if ($AcceptEulaEnabled.hasClass('btn-primary')) {
         addNode.setAttribute("AcceptEULA", "TRUE");
     }
-    
+
     if ($AcceptEulaDisabled.hasClass('btn-primary')) {
         addNode.setAttribute("AcceptEULA", "FALSE");
     }
@@ -1694,7 +1694,7 @@ function odtSaveProperties(xmlDoc) {
                 packageguidNode.setAttribute("Name", "PACKAGEGUID");
                 packageguidNode.setAttribute("Value", packageguidVal);
             }
-        }   
+        }
     }
 
     if ($btAutoActivateYes.hasClass('btn-primary') || $btAutoActivateNo.hasClass('btn-primary')) {
@@ -2542,4 +2542,3 @@ var versions = [
 '15.0.4505.1006',
 '15.0.4481.1510'
 ];
-
