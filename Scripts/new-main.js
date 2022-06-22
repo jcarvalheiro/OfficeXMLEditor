@@ -1,6 +1,7 @@
 var selectDate;
+var odt2021Window;
+var odt2019Window;
 var odt2016Window;
-var odt2013Window;
 var loading = false;
 var xmlHistoryLength = 0;
 var versionData;
