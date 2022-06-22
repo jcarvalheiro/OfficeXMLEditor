@@ -7,6 +7,7 @@ var versionData;
 var officeExcludeProducts = ["Access", "Excel", "Groove", "Lync", "OneNote", "Outlook", "OneDrive", "PowerPoint", "Publisher", "Word"];
 var Office2016Versions;
 var Office2019Versions;
+var Office2021Versions;
 
 $(document).ready(function () {
     var finput = document.getElementById('fileInput');
@@ -347,8 +348,12 @@ $(document).ready(function () {
     $("#cbBranch").change(function () {
         if ($("#office2016Select").hasClass('is-selected')) {
             setVersionPanel("office2016Select");
-        } else {
+        }
+        if ($("#office2019Select").hasClass('is-selected')) {
             setVersionPanel("office2019Select");
+        }
+         else {
+            setVersionPanel("office2021Select");
         }
 
         var selectedBranch = $("#cbBranch").val();
