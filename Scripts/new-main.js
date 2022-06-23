@@ -350,11 +350,8 @@ $(document).ready(function () {
         if ($("#office2016Select").hasClass('is-selected')) {
             setVersionPanel("office2016Select");
         }
-        if ($("#office2019Select").hasClass('is-selected')) {
-            setVersionPanel("office2019Select");
-        }
          else {
-            setVersionPanel("office2021Select");
+            setVersionPanel("office2019Select");
         }
 
         var selectedBranch = $("#cbBranch").val();
